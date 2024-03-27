@@ -6,12 +6,18 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    overflow-x: hidden;
 }
 
 html{
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    
+}
+body {
+    min-width: 414px; /* Set the maximum width */
+    margin: 0 auto; /* Center the content horizontally */
+    overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
 }
 
 #favicon{
@@ -21,6 +27,7 @@ html{
 img{
     width: 100%;
 }
+
 header{
     display: flex;
     align-items: center;
@@ -404,10 +411,11 @@ form .form-content input:valid~span::before{
 }
 /*Responsive*/
 
-@media(max-width: 992px){
+@media screen and (max-width: 992px){
 
 /*header*/
     header{
+        padding: 1em;
         flex-direction: column;
         height: 200px;
         background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2));
@@ -439,19 +447,28 @@ form .form-content input:valid~span::before{
 
 }
 
-@media(max-width: 950px){
+@media screen and (max-width: 950px){
+    header{
+        padding: 1em;
+    }
     .contact .contact-box{
         flex: 100%;
     }
 }
 
-@media(max-width: 800px){
+@media screen and (max-width: 800px){
+    header{
+        padding: 1em;
+    }
     .menu .menu-content .hot-coffees, .cold-coffees, .none-coffees, .starburst-coffees{
         margin: 20px;
     }
 }
 
-@media(max-width: 700px){
+@media screen and (max-width: 700px){
+    header{
+        padding: 1em;
+    }
     .footer .footer-box .social-media a{
         color: white;
         background-color: #333333;
@@ -471,9 +488,10 @@ form .form-content input:valid~span::before{
     }
 }
 
-@media(max-width: 500px){
+@media screen and (max-width: 500px){
     header{
         height: 200px;
+        padding: 1em;
     }
 
     header .logo a{
@@ -522,10 +540,11 @@ form .form-content input:valid~span::before{
     }
 }
 
-@media(max-wdith: 410px){
+@media screen and (max-width: 410px){
     /*header*/
 
     header{
+        padding: 1em;
         height: 120px;
     }
 
@@ -557,3 +576,4 @@ form .form-content input:valid~span::before{
         font-size: 13px;
     } 
 }
+
