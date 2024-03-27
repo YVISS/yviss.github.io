@@ -107,8 +107,7 @@ header nav ul li a:hover{
 
 .content video{
     margin: 0px; 
-    width: 1980px; 
-    height: 912.375px;
+    aspect-ratio: 16 / 11;
     z-index: 0;
 }
 
@@ -327,6 +326,7 @@ form .form-content input{
     outline: none;
     border: none;
     color: white;
+    overflow: hidden;
 }
 
 form .form-content label{
@@ -334,7 +334,7 @@ form .form-content label{
     top: 50%;
     left: 5px;
     color: gray;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
     font-size: 17px;
     transition: .5s;
     pointer-events: none;
@@ -367,7 +367,7 @@ form .form-content input:valid~span::before{
     border: none;
     background-color: #ff6600;
     color: white;
-    border: 5px;
+    border-radius: 5px;
     cursor: pointer;
     transition: all .4s ease-in;
 }
@@ -393,10 +393,12 @@ form .form-content input:valid~span::before{
 .footer .footer-box .social-media a{
     color: white;
     background-color: #333333;
-    border-radius: 50%;
-    font-size: 17px;
+    border-radius: 20%;
+    font-size: 20px;
     padding: 10px;
     margin: 5px;
+    width: auto;
+    
 }
 
 .footer .footer-box .social-media{
