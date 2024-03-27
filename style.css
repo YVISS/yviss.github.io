@@ -6,12 +6,14 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 html{
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: scroll;
     
 }
 body {
@@ -39,8 +41,8 @@ header{
     z-index: 1;
     transition: filter 0.4s ease-in;
     background-color: none;
+    
 }
-
 /* Add styles for the background blur div */
 .header-background {
     position: absolute;
@@ -290,7 +292,7 @@ header nav ul li a:hover{
     height: 100%;
 }
 
-.contact-image img{
+.contact-box img{
     opacity: .9;
 }
 
@@ -374,6 +376,7 @@ form .form-content input:valid~span::before{
     background-color: #ff6681;
 }
 
+
 /*Footer*/
 .footer{
     background-color: #404040;
@@ -394,6 +397,13 @@ form .form-content input:valid~span::before{
     font-size: 17px;
     padding: 10px;
     margin: 5px;
+}
+
+.footer .footer-box .social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .footer .footer-box .social-media a:hover{
