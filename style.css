@@ -41,7 +41,7 @@ header{
     z-index: 1;
     transition: filter 0.4s ease-in;
     background-color: none;
-    
+    border-bottom: 2px solid rgba(59, 59, 59, 0.13);
 }
 /* Add styles for the background blur div */
 .header-background {
@@ -50,13 +50,14 @@ header{
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: none; /* Adjust blur amount as needed */
+    backdrop-filter: blur(0px);   
     z-index: -1; /* Ensure it sits behind other header content */
-    transition: backdrop-filter 0.4s ease-in-out;
+    transition: backdrop-filter 0.4s ease-in;
+    
 }
 
 header.scrolled .header-background {
-    backdrop-filter: blur(5px); /* Remove blur effect when scrolled */
+    backdrop-filter: blur(10px);   
 }
 
 header .logo{
@@ -84,7 +85,7 @@ header nav ul li a{
 }
 
 header nav ul li a:hover{
-    transition: 0.1s ease-in; 
+    transition: 0.4s ease-in; 
     border-bottom: 2px solid white;
 }
 
@@ -164,40 +165,50 @@ header nav ul li a:hover{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 50px 0;
+    padding: 50px;
     flex-wrap: wrap;
     background-color: #404040;
 }
 
-.menu .menu-content .hot-coffees, .cold-coffees, .none-coffees, 
+.menu .menu-content .hot-coffees, .none-coffees, 
 .starburst-coffees{
     width: 250px;
 }
 
 .menu .menu-content .hot-coffees .hot-coffees-images img{
-    border-radius: 50%;
-}
-.menu .menu-content .cold-coffees .cold-coffees-images img{
-    border-radius: 50%;
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 .menu .menu-content .none-coffees .none-coffees-images img{
-    border-radius: 50%;
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 .menu .menu-content .starburst-coffees .starburst-coffees-images img{
-    border-radius: 50%;
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
-.menu .menu-content .hot-coffees-body, .cold-coffees-body, .none-coffees-body, .starburst-coffees-body{
+.menu .menu-content .hot-coffees-body,  .none-coffees-body, .starburst-coffees-body{
     text-align: center;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 } 
 
-.menu .menu-content .hot-coffees-body h2, .cold-coffees-body h2, .none-coffees-body h2, .starburst-coffees-body h2{
+.menu .menu-content .hot-coffees-body h2, .none-coffees-body h2, .starburst-coffees-body h2{
     color: orange;
     font-weight: 500;
 } 
 
-.menu .menu-content .hot-coffees-body label, .cold-coffees-body label, .none-coffees-body label, .starburst-coffees-body label{
+.menu .menu-content .hot-coffees-body label, .none-coffees-body label, .starburst-coffees-body label{
     color: white;
     margin-top: 10px;
 } 
@@ -227,7 +238,7 @@ header nav ul li a:hover{
 .shop-box{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: #404040;
     padding: 50px 0;
     flex-wrap: wrap;
@@ -241,13 +252,19 @@ header nav ul li a:hover{
 
 .shop-box .card-image{
     width: 100%;
-    height: 280px;
+    height: 380px;
     overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    transition: transform .4s;
+}
+.shop-box .card-image img {
+    width: 100%;
+    object-fit:cover;
+    transition: transform 0.3s ease-in-out; /* Add this line for smooth transition */
 }
 
 .shop-box .card-image img:hover{
     transform: scale(1.1);
-    transition: transform .4s ease-in-out;
 }
 
 .shop-box .card-body{
@@ -256,13 +273,16 @@ header nav ul li a:hover{
     border: 3px solid #3B3B3B;
 }
 
-.shop-box .card-body i{
-    color: yellow;
-    font-size: 10px;
+.shop-box .card-body .coffee-type{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #0d0d0d;
+    font-size: 20px;
+    font-weight: 500;
     position: relative;
     bottom: 5px;
 }
-
 .shop-box .card-body .cash{
     display: block;
     font-size: 22px;
@@ -289,6 +309,8 @@ header nav ul li a:hover{
 .contact img{
     width: 100%;
     height: 100%;
+    object-fit: contain;
+    background-color:rgb(64, 64, 64);
 }
 
 .contact-box img{
@@ -361,7 +383,53 @@ form .form-content input:valid~span::before{
     width: 100%;
 }
 
+.orders{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #3B3B3B;
+}
+.orders input[type="checkbox"] {
+    /* Hide the default checkbox */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #0d0d0d;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Style the label to act as a custom checkbox */
+  .orders label {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fffcec;
+  }
+  
+  /* Style the checkbox when checked */
+  .orders input[type="checkbox"]:checked {
+    background-color: 0d0d0d;
+  }
+  
+  /* Style the inner checkmark */
+  .orders input[type="checkbox"]:checked::before {
+    content: "\2713"; /* Checkmark symbol */
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  
+
 .contact-body button{
+    margin-block-start: 10px;
     padding: 10px 20px;
     font-size: 17px;
     border: none;
@@ -472,7 +540,7 @@ form .form-content input:valid~span::before{
     header{
         padding: 1em;
     }
-    .menu .menu-content .hot-coffees, .cold-coffees, .none-coffees, .starburst-coffees{
+    .menu .menu-content .hot-coffees, .none-coffees, .starburst-coffees{
         margin: 20px;
     }
 }
