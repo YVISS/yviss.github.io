@@ -69,7 +69,7 @@
           <img src="/resources/products/starbursts/StarburstSonata/starburst.jpg" alt="" />
         </div>
         <div class="starburst-coffees-body">
-          <h2>Starburst Sonata</h2>
+          <h2>Starburst Sonata(Temporary unavailable)</h2>
           <label>A Symphony of Sparkling Flavors</label>
         </div>
       </div>
@@ -91,6 +91,7 @@
             <label class="cash">&#8369 110.00</label><!--#8369-->
             <h3>Iced Americano</h3>
             <label for="">with Vanilla Sweet Cream Cold Foam</label>
+            <button class="addtocart btn" id="addtocart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -105,6 +106,7 @@
             <label class="cash">&#8369 120.00</label><!--#8369-->
             <h3>Spanish Latte</h3>
             <label for="">A harmonious duet of bitter and sweet</label>
+            <button class="addtocart btn" id="addtocart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -119,6 +121,7 @@
             <h3>White Mocha</h3>
             <label for="">Steamed white chocolate
               syrup espresso</label>
+              <button class="addtocart btn" id="addtocart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -132,6 +135,7 @@
             <label class="cash">&#8369 110.00</label><!--#8369-->
             <h3>Choco Lava</h3>
             <label for="">Delicious Chocolate Latte with extra Lava </label>
+            <button class="addtocart btn" id="addtocart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -145,6 +149,7 @@
             <label class="cash">&#8369 130.00</label><!--#8369-->
             <h3>Strawberry Milk</h3>
             <label for="">100% Pure Strawberry Goodness</label>
+            <button class="addtocart btn" id="addtocart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -158,6 +163,7 @@
             <label class="cash">&#8369 130.00</label><!--#8369-->
             <h3>Original Chocolate</h3>
             <label for="">Your go to chocolate drink made special</label>
+            <button class="addtocart btn" id="addtocart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -171,6 +177,7 @@
             <label class="cash">&#8369 130.00</label><!--#8369-->
             <h3>Matcha Latte</h3>
             <label for="">Pure Matcha goodness with milk</label>
+            <button class="addtocart btn" id="addtocart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -182,7 +189,7 @@
     </div>
     <div class="contact-box">
       <div class="contact-body">
-        <form action="order.php" method="POST">
+        <form id="order-form" method="POST">
           <h2>Order Now</h2><br>
           <h3>Personal Information</h3>
           <div class="form-content">
@@ -220,7 +227,7 @@
             <div class="item"><input type="checkbox" name="items[]" id="matchalatte" value="Matcha Latte">
               <label for="matchalatte">Matcha Latte</label></div>
           </div>
-          <button type="submit">Send</button>
+          <button class="btn" type="submit">Send</button>
         </form>
       </div>
     </div>
@@ -241,17 +248,7 @@
     </div>
   </div>
 </body>
-<script>
-  document.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-
-    if (window.scrollY > 0) {
-      header.classList.add('scrolled');
-    }
-    else {
-      header.classList.remove('scrolled');
-    }
-  });
-</script>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript" src="email.js"></script>
 
 </html>
