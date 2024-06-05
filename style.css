@@ -462,7 +462,7 @@ form .form-content input:valid ~ span::before {
 }
 
 .contact-body button{
-    display: flex;
+  display: flex;
   justify-content: center;
   margin-top: 20px;
   font-weight: 600;
