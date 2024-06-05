@@ -301,7 +301,7 @@ header nav ul li a:hover {
 .shop-box .card-body button{
     display: flex;
 }
-.btn{
+.shop-box .card-body .addtocart{
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -317,7 +317,7 @@ header nav ul li a:hover {
   transition: transform 0.3s, box-shadow 0.3s;
   border: 1px solid rgba(234, 88, 12, 0.7);
 }
-.btn:hover {
+.shop-box .card-body .addtocart:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(64, 64, 64, 0.25),
     0 10px 10px rgba(64, 64, 64, 0.22), 0 0 120px -10px rgb(249, 115, 22);
@@ -459,6 +459,30 @@ form .form-content input:valid ~ span::before {
   color: white;
   font-size: 16px;
   line-height: 18px;
+}
+
+.contact-body button{
+    display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 17px;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  background-color: rgb(234, 88, 12);
+  color: #fff7ed;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(234, 88, 12, 0.5),
+    0 6px 6px rgba(234, 88, 12, 0.5), 0 0 100px -10px rgb(234, 88, 12);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(234, 88, 12, 0.7);
+}
+
+.contact-body button:hover{
+    transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(64, 64, 64, 0.25),
+    0 10px 10px rgba(64, 64, 64, 0.22), 0 0 120px -10px rgb(249, 115, 22);
 }
 
 /*Footer*/
