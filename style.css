@@ -301,7 +301,7 @@ header nav ul li a:hover {
 .shop-box .card-body button{
     display: flex;
 }
-.btn{
+button{
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -317,7 +317,7 @@ header nav ul li a:hover {
   transition: transform 0.3s, box-shadow 0.3s;
   border: 1px solid rgba(234, 88, 12, 0.7);
 }
-.btn:hover {
+button:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(64, 64, 64, 0.25),
     0 10px 10px rgba(64, 64, 64, 0.22), 0 0 120px -10px rgb(249, 115, 22);
