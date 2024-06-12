@@ -1,5 +1,3 @@
-
-
 document.addEventListener('scroll', () => {
     const header = document.querySelector('header');
 
@@ -48,4 +46,43 @@ document.getElementById('order-form').addEventListener('submit', function(event)
           alert('Failed to send email. Please try again later.');
       });
 });
+
+
+//cartfunctions
+
+let iconCart = document.querySelector('.icon-cart');
+let closeCart = document.querySelector('.close');
+let body = document.querySelector('body');
+let listorderHTML = document.querySelector('.list__order');
+let listorder = [];
+
+
+iconCart.addEventListener('click', () => {
+  body.classList.toggle('showcart');
+})
+
+closeCart.addEventListener('click', () => {
+  body.classList.toggle('showcart');
+})
+
+const initApp = () => {
+  //get data from json
+  fetch('products.json')
+  .then(response => response.json())
+  .then(data => {
+    listorder = data;
+    console.log(listorder);
+  })
+}
+
+const addDataToHTML = () => {
+  listorderHTML.innerHTML = '';
+  if(listorder.length > 0){
+    listorder.forEach(product => {
+      let new 
+    });
+  }
+} 
+
+initApp();
 

@@ -29,6 +29,9 @@ img {
   width: 100%;
 }
 
+/* MODALS */
+
+
 header {
   display: flex;
   align-items: center;
@@ -64,6 +67,18 @@ header .logo {
   padding: 15px;
 }
 
+header nav ul .header__line{
+  padding-top: 1.5em;
+  border: 1px solid white;
+}
+
+header nav ul .cart{
+  cursor: pointer;
+}
+
+header nav ul .quantity{
+  font-size: 15px;
+}
 header .logo a {
   color: #f8f4e4;
 }
@@ -264,24 +279,53 @@ header nav ul li a:hover {
   overflow: hidden;
   border-radius: 10px 10px 0 0;
   transition: transform 0.4s;
+  position: relative;
 }
+
 .shop-box .card-image img {
   width: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out; /* Add this line for smooth transition */
+  transition: transform 0.3s ease-in-out, filter 0.4s ease-in-out; /* Add this line for smooth transition */
 }
-
 .shop-box .card-image img:hover {
   transform: scale(1.1);
+  filter: blur(5px) brightness(80%); /* Apply glassmorphism effect on hover */
 }
 
+.shop-box .card-image button {
+  position: absolute;
+  z-index: 1;
+  width: 90%;
+  margin: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  background-color: rgb(234, 88, 12);
+  color: #fff7ed;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  opacity: 0;
+  box-shadow: 0 10px 20px rgba(234, 88, 12, 0.5),
+    0 6px 6px rgba(234, 88, 12, 0.5), 0 0 100px -10px rgb(234, 88, 12);
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out, translateX(-50%) translateY(100px) 0.5s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.shop-box .card-image:hover button {
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  transform: translateX(0) translateY(calc(100% * 6));
+}
+
+
 .shop-box .card-body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 20px;
-    color: white;
-    border: 3px solid rgb(59, 59, 59);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  border: 3px solid rgb(59, 59, 59);
 }
 
 .shop-box .card-body .coffee-type {
@@ -298,10 +342,10 @@ header nav ul li a:hover {
   display: block;
   font-size: 22px;
 }
-.shop-box .card-body button{
-    display: flex;
+.shop-box .card-body button {
+  display: flex;
 }
-.shop-box .card-body .addtocart{
+.shop-box .card-body .addtocart {
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -322,6 +366,90 @@ header nav ul li a:hover {
   box-shadow: 0 14px 28px rgba(64, 64, 64, 0.25),
     0 10px 10px rgba(64, 64, 64, 0.22), 0 0 120px -10px rgb(249, 115, 22);
 }
+
+/*Cart*/
+
+.cartTab{
+  width: 500px;
+  background-color: #d1fae5;
+  color: #0d0d0d;
+  position: fixed;
+  inset: 0 -500px 0 auto;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  z-index: 999;
+  transition: 0.5s ease-in-out;
+}
+
+.listeditems{
+  overflow: auto;
+}
+body.showcart .cartTab{
+  inset: 0 0 0 auto;
+}
+
+.cartTab h1{
+  padding: 20px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.cartTab .cart__buttons{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .cart__buttons button{
+  border: none;
+  background-color: rgb(234, 88, 12);
+  color: #fff7ed;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.cartTab .cart__buttons .close{
+  background-color: red;
+}
+.cartTab .cart__buttons button:hover{
+  background-color: #f57d3d;
+}
+
+.cartTab .listeditems .listed__orders .listed__image img{
+  width: 100%;
+  border-radius: 20px;
+}
+
+.cartTab .listeditems .listed__orders{
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.cartTab .listed__quantity span{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: rgb(234, 88, 12);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.cartTab .listed__quantity span:nth-child(2){
+  background-color: transparent;
+  color: rgb(234, 88, 12);
+}
+
+.cartTab .listed__orders:nth-child(even){
+  background-color: rgb(232, 252, 242);
+}
+
+
+
 
 /*Contact*/
 
@@ -461,8 +589,8 @@ form .form-content input:valid ~ span::before {
   line-height: 18px;
 }
 
-.contact-body button{
-    display: flex;
+.contact-body button {
+  display: flex;
   justify-content: center;
   margin-top: 20px;
   font-weight: 600;
@@ -479,8 +607,8 @@ form .form-content input:valid ~ span::before {
   border: 1px solid rgba(234, 88, 12, 0.7);
 }
 
-.contact-body button:hover{
-    transform: translateY(-3px);
+.contact-body button:hover {
+  transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(64, 64, 64, 0.25),
     0 10px 10px rgba(64, 64, 64, 0.22), 0 0 120px -10px rgb(249, 115, 22);
 }
@@ -662,7 +790,7 @@ form .form-content input:valid ~ span::before {
 
   header {
     padding: 1em;
-    height: 120px;
+    height: 170px;
   }
 
   header .logo a {

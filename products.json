@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Iced Americano",
+        "price": 110.00,
+        "image": "/resources/products/espresso/americano.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Spanish Latte",
+        "price": 120.00,
+        "image": "/resources/products/espresso/spanish.jpg"
+    },
+    {
+        "id": 3,
+        "name": "White Mocha",
+        "price": 120.00,
+        "image": "/resources/products/espresso/white.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Choco Lava",
+        "price": 110.00,
+        "image": "/resources/products/espresso/choco.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Strawberry Milk",
+        "price": 130.00,
+        "image": "/resources/products/espresso/sberry.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Original Chocolate",
+        "price": 130.00,
+        "image": "/resources/products/espresso/origchoco.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Matcha Latte",
+        "price": 130.00,
+        "image": "/resources/products/espresso/match.jpg"
+    }
+]

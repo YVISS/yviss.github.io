@@ -12,241 +12,287 @@
   <link class="icon" rel="icon" href="/resources/logo.jpeg" type="image/x-icon" />
 </head>
 
-<body>
-  <header>
-    <div class="header-background"></div>
-    <div class="logo">
-      <a href="#">Fiddlelity<span>Café</span></a>
+<body class="">
+  <div class="container">
+    <header>
+      <div class="header-background"></div>
+      <div class="logo">
+        <a href="#">Fiddlelity<span>Café</span></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#order">Order</a></li>
+          <li class="header__line"></li>
+          <li class="icon-cart">
+            <div class="icon-cart">
+              <a href="#cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M17 17h-11v-14h-2" />
+                  <path d="M6 5l14 1l-1 7h-13" />
+                </svg>
+                <span class="quantity">0</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+  
+    </header>
+  
+    <div class="content" id="home">
+      <video loop="loop" autoplay="" playsinline="" muted="" id="mejs_25525169187644425_html5" preload="none"
+        src="/resources/bg_coffee.mp4">
+        <source type="video/mp4" src="/resources/bg_coffee.mp4" />
+      </video>
+      <div class="blur"></div>
+      <div class="texts">
+        <h2>Fiddlelity Café</h2>
+        <p>Orchestrate your mornings to the Tune of Coffee!</p>
+      </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="#order">Order</a></li>
-      </ul>
-    </nav>
-
-  </header>
-
-  <div class="content" id="home">
-    <video loop="loop" autoplay="" playsinline="" muted="" id="mejs_25525169187644425_html5" preload="none"
-      src="/resources/bg_coffee.mp4">
-      <source type="video/mp4" src="/resources/bg_coffee.mp4" />
-    </video>
-    <div class="blur"></div>
-    <div class="texts">
-      <h2>Fiddlelity Café</h2>
-      <p>Orchestrate your mornings to the Tune of Coffee!</p>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <h3>Menu</h3>
+        <h4>Fiddlelity Café Menu</h4>
+      </div>
+      <div class="menu-content">
+        <div class="hot-coffees">
+          <div class="hot-coffees-images">
+            <img src="/resources/espresso.jpeg" alt="" />
+          </div>
+          <div class="hot-coffees-body">
+            <h2>Espresso</h2>
+            <label>A thicker and a more intense coffee</label>
+          </div>
+        </div>
+        <div class="none-coffees">
+          <div class="none-coffees-images">
+            <img src="/resources/products/noncoffee/strawberry.jpg" alt="" />
+          </div>
+          <div class="none-coffees-body">
+            <h2>Non Coffee</h2>
+            <label>For non coffee lovers, latte based drinks.</label>
+          </div>
+        </div>
+        <div class="starburst-coffees">
+          <div class="starburst-coffees-images">
+            <img src="/resources/products/starbursts/StarburstSonata/starburst.jpg" alt="" />
+          </div>
+          <div class="starburst-coffees-body">
+            <h2>Starburst Sonata</h2>
+            <label>A Symphony of Sparkling Flavors
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shop" id="shop">
+      <div class="shop-header">
+        <h3>Shop</h3>
+        <h4>Fiddlelity Café Drinks</h4>
+      </div>
+      <div class="shop-box">
+        <div class="item-1">
+          <div class="card">
+            <div class="card-image">
+              <button class="addtocart">Add to Cart</button>
+              <img src="/resources/products/espresso/americano.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <span class="coffee-type">Espresso</span>
+              <label class="cash">&#8369 110.00</label><!--#8369-->
+              <h3>Iced Americano</h3>
+              <label for="">with Vanilla Sweet Cream Cold Foam</label>
+            </div>
+          </div>
+        </div>
+        <div class="item-2">
+          <div class="card">
+            <div class="card-image">
+              <button class="addtocart">Add to Cart</button>
+              <img src="/resources/products/espresso/spanish.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <span class="coffee-type">Espresso</span>
+              <span class="svg-hover"></span>
+              <label class="cash">&#8369 120.00</label><!--#8369-->
+              <h3>Spanish Latte</h3>
+              <label for="">A harmonious duet of bitter and sweet</label>
+            </div>
+          </div>
+        </div>
+        <div class="item-3">
+          <div class="card">
+            <div class="card-image">
+              <button class="addtocart">Add to Cart</button>
+              <img src="/resources/products/espresso/white.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <span class="coffee-type">Espresso</span>
+              <label class="cash">&#8369 120.00</label><!--#8369-->
+              <h3>White Mocha</h3>
+              <label for="">Steamed white chocolate
+                syrup espresso</label>
+            </div>
+          </div>
+        </div>
+        <div class="item-4">
+          <div class="card">
+            <div class="card-image">
+              <button class="addtocart">Add to Cart</button>
+              <img src="/resources/products/noncoffee/choco.jpeg" alt="" />
+            </div>
+            <div class="card-body">
+              <span class="coffee-type">Non Coffee</span>
+              <label class="cash">&#8369 110.00</label><!--#8369-->
+              <h3>Choco Lava</h3>
+              <label for="">Delicious Chocolate Latte with extra Lava </label>
+            </div>
+          </div>
+        </div>
+        <div class="item-5">
+          <div class="card">
+            <div class="card-image">
+              <button class="addtocart">Add to Cart</button>
+              <img src="/resources/products/noncoffee/sberry.PNG" alt="" />
+            </div>
+            <div class="card-body">
+              <span class="coffee-type">Non Coffee</span>
+              <label class="cash">&#8369 130.00</label><!--#8369-->
+              <h3>Strawberry Milk</h3>
+              <label for="">100% Pure Strawberry Goodness</label>
+            </div>
+          </div>
+        </div>
+        <div class="item-6">
+          <div class="card">
+            <div class="card-image">
+              <button class="addtocart">Add to Cart</button>
+              <img src="/resources/products/noncoffee/origchoco.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <span class="coffee-type">Non Coffee</span>
+              <label class="cash">&#8369 130.00</label><!--#8369-->
+              <h3>Original Chocolate</h3>
+              <label for="">Your go to chocolate drink made special</label>
+            </div>
+          </div>
+        </div>
+        <div class="item-7">
+          <div class="card">
+            <div class="card-image">
+              <button class="addtocart">Add to Cart</button>
+              <img src="/resources/products/noncoffee/match.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <span class="coffee-type">Non Coffee</span>
+              <label class="cash">&#8369 130.00</label><!--#8369-->
+              <h3>Matcha Latte</h3>
+              <label for="">Pure Matcha goodness with milk</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cartTab">
+      <h1>Cart</h1>
+      <div class="listeditems">
+        <div class="listed__orders">
+          <div class="listed__image">
+            <img src="/resources/products/espresso/Iced Spanish Latte.PNG" alt="">
+          </div>
+          <div class="listed__name">
+            Name of prodct
+          </div>
+          <div class="listed__price">
+            &#8369 0.00
+          </div>
+          <div class="listed__quantity">
+            <span class="minus">-</span>
+            <span class="minus">1</span>
+            <span class="plus">+</span>
+          </div>
+        </div>
+      </div>
+      <div class="cart__buttons">
+        <button class="close">Close</button>
+        <button class="checkout">Check Out</button>
+      </div>
+    </div>
+    <div class="contact" id="order">
+      <div class="contact-box">
+        <img src="/resources/bg2.jpeg" alt="">
+      </div>
+      <div class="contact-box">
+        <div class="contact-body">
+          <form id="order-form" method="POST">
+            <h2>Order Now</h2><br>
+            <h3>Personal Information</h3>
+            <div class="form-content">
+              <input name ="name" type="username" required>
+              <span></span>
+              <label for="">Full Name</label>
+            </div>
+            <div class="form-content">
+              <input name ="address" type="text" required>
+              <span></span>
+              <label for="">Address</label>
+            </div>
+            <div class="form-content">
+              <input name="email" type="email" required>
+              <span></span>
+              <label for="">Email</label>
+            </div>
+            <div class="form-content">
+              <input name="number" type="text" required>
+              <span></span>
+              <label for="">Mobile Number</label>
+            </div>
+            <h3>Items</h3><br>
+            <div class="orders">
+              <div class="item"><input type="checkbox" name="items[]" id="spanishlatte" value="Spanish Latte">
+                <label for="spanishlatte">Spanish Latte</label></div>
+              <div class="item"><input type="checkbox" name="items[]" id="whitemocha" value="White Mocha">
+                <label for="whitemocha">White Mocha</label></div>
+              <div class="item"><input type="checkbox" name="items[]" id="chocolava" value="Choco Lava">
+                <label for="chocolava">Choco Lava</label></div>
+              <div class="item"><input type="checkbox" name="items[]" id="strawberrymilk" value="Strawberry Milk">
+                <label for="strawberrymilk">Strawberry Milk</label></div>
+              <div class="item"><input type="checkbox" name="items[]" id="originalchocolate" value="Original Chocolate">
+                <label for="originalchocolate">Original Chocolate</label></div>
+              <div class="item"><input type="checkbox" name="items[]" id="matchalatte" value="Matcha Latte">
+                <label for="matchalatte">Matcha Latte</label></div>
+            </div>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-box">
+  
+        <div class="social-media">
+          <a href="https://www.facebook.com/fiddlelitycafe"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/fiddlelitycafe/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+          <label>Copyright &copy 2024</label>
+        </div>
+        <div class="brand">
+          <label">Fiddlelity <span>Café</span></label>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="menu" id="menu">
-    <div class="menu-header">
-      <h3>Menu</h3>
-      <h4>Fiddlelity Café Menu</h4>
-    </div>
-    <div class="menu-content">
-      <div class="hot-coffees">
-        <div class="hot-coffees-images">
-          <img src="/resources/espresso.jpeg" alt="" />
-        </div>
-        <div class="hot-coffees-body">
-          <h2>Espresso</h2>
-          <label>A thicker and a more intense coffee</label>
-        </div>
-      </div>
-      <div class="none-coffees">
-        <div class="none-coffees-images">
-          <img src="/resources/products/noncoffee/strawberry.jpg" alt="" />
-        </div>
-        <div class="none-coffees-body">
-          <h2>Non Coffee</h2>
-          <label>For non coffee lovers, latte based drinks.</label>
-        </div>
-      </div>
-      <div class="starburst-coffees">
-        <div class="starburst-coffees-images">
-          <img src="/resources/products/starbursts/StarburstSonata/starburst.jpg" alt="" />
-        </div>
-        <div class="starburst-coffees-body">
-          <h2>Starburst Sonata(Temporary unavailable)</h2>
-          <label>A Symphony of Sparkling Flavors</label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="shop" id="shop">
-    <div class="shop-header">
-      <h3>Shop</h3>
-      <h4>Fiddlelity Café Drinks</h4>
-    </div>
-    <div class="shop-box">
-      <div class="item-1">
-        <div class="card">
-          <div class="card-image">
-            <img src="/resources/products/espresso/americano.jpg" alt="" />
-          </div>
-          <div class="card-body">
-            <span class="coffee-type">Espresso</span>
-            <label class="cash">&#8369 110.00</label><!--#8369-->
-            <h3>Iced Americano</h3>
-            <label for="">with Vanilla Sweet Cream Cold Foam</label>
-            <button class="addtocart btn" id="addtocart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="item-2">
-        <div class="card">
-          <div class="card-image">
-            <img src="/resources/products/espresso/spanish.jpg" alt="" />
-          </div>
-          <div class="card-body">
-            <span class="coffee-type">Espresso</span>
-            <span class="svg-hover"></span>
-            <label class="cash">&#8369 120.00</label><!--#8369-->
-            <h3>Spanish Latte</h3>
-            <label for="">A harmonious duet of bitter and sweet</label>
-            <button class="addtocart btn" id="addtocart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="item-3">
-        <div class="card">
-          <div class="card-image">
-            <img src="/resources/products/espresso/white.jpg" alt="" />
-          </div>
-          <div class="card-body">
-            <span class="coffee-type">Espresso</span>
-            <label class="cash">&#8369 120.00</label><!--#8369-->
-            <h3>White Mocha</h3>
-            <label for="">Steamed white chocolate
-              syrup espresso</label>
-              <button class="addtocart btn" id="addtocart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="item-4">
-        <div class="card">
-          <div class="card-image">
-            <img src="/resources/products/noncoffee/choco.jpeg" alt="" />
-          </div>
-          <div class="card-body">
-            <span class="coffee-type">Non Coffee</span>
-            <label class="cash">&#8369 110.00</label><!--#8369-->
-            <h3>Choco Lava</h3>
-            <label for="">Delicious Chocolate Latte with extra Lava </label>
-            <button class="addtocart btn" id="addtocart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="item-5">
-        <div class="card">
-          <div class="card-image">
-            <img src="/resources/products/noncoffee/sberry.PNG" alt="" />
-          </div>
-          <div class="card-body">
-            <span class="coffee-type">Non Coffee</span>
-            <label class="cash">&#8369 130.00</label><!--#8369-->
-            <h3>Strawberry Milk</h3>
-            <label for="">100% Pure Strawberry Goodness</label>
-            <button class="addtocart btn" id="addtocart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="item-6">
-        <div class="card">
-          <div class="card-image">
-            <img src="/resources/products/noncoffee/origchoco.jpg" alt="" />
-          </div>
-          <div class="card-body">
-            <span class="coffee-type">Non Coffee</span>
-            <label class="cash">&#8369 130.00</label><!--#8369-->
-            <h3>Original Chocolate</h3>
-            <label for="">Your go to chocolate drink made special</label>
-            <button class="addtocart btn" id="addtocart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="item-7">
-        <div class="card">
-          <div class="card-image">
-            <img src="/resources/products/noncoffee/match.jpg" alt="" />
-          </div>
-          <div class="card-body">
-            <span class="coffee-type">Non Coffee</span>
-            <label class="cash">&#8369 130.00</label><!--#8369-->
-            <h3>Matcha Latte</h3>
-            <label for="">Pure Matcha goodness with milk</label>
-            <button class="addtocart btn" id="addtocart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="contact" id="order">
-    <div class="contact-box">
-      <img src="/resources/bg2.jpeg" alt="">
-    </div>
-    <div class="contact-box">
-      <div class="contact-body">
-        <form id="order-form" method="POST">
-          <h2>Order Now</h2><br>
-          <h3>Personal Information</h3>
-          <div class="form-content">
-            <input name ="name" type="username" required>
-            <span></span>
-            <label for="">Full Name</label>
-          </div>
-          <div class="form-content">
-            <input name ="address" type="text" required>
-            <span></span>
-            <label for="">Address</label>
-          </div>
-          <div class="form-content">
-            <input name="email" type="email" required>
-            <span></span>
-            <label for="">Email</label>
-          </div>
-          <div class="form-content">
-            <input name="number" type="text" required>
-            <span></span>
-            <label for="">Mobile Number</label>
-          </div>
-          <h3>Items</h3><br>
-          <div class="orders">
-            <div class="item"><input type="checkbox" name="items[]" id="spanishlatte" value="Spanish Latte">
-              <label for="spanishlatte">Spanish Latte</label></div>
-            <div class="item"><input type="checkbox" name="items[]" id="whitemocha" value="White Mocha">
-              <label for="whitemocha">White Mocha</label></div>
-            <div class="item"><input type="checkbox" name="items[]" id="chocolava" value="Choco Lava">
-              <label for="chocolava">Choco Lava</label></div>
-            <div class="item"><input type="checkbox" name="items[]" id="strawberrymilk" value="Strawberry Milk">
-              <label for="strawberrymilk">Strawberry Milk</label></div>
-            <div class="item"><input type="checkbox" name="items[]" id="originalchocolate" value="Original Chocolate">
-              <label for="originalchocolate">Original Chocolate</label></div>
-            <div class="item"><input type="checkbox" name="items[]" id="matchalatte" value="Matcha Latte">
-              <label for="matchalatte">Matcha Latte</label></div>
-          </div>
-          <button class="btn" type="submit">Send</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="footer-box">
-
-      <div class="social-media">
-        <a href="https://www.facebook.com/fiddlelitycafe"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.instagram.com/fiddlelitycafe/"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-      <div class="copyright">
-        <label>Copyright &copy 2024</label>
-      </div>
-      <div class="brand">
-        <label">Fiddlelity <span>Café</span></label>
-      </div>
-    </div>
-  </div>
+  
 </body>
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script type="text/javascript" src="email.js"></script>
