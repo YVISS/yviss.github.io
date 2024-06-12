@@ -3,42 +3,57 @@
         "id": 1,
         "name": "Iced Americano",
         "price": 110.00,
-        "image": "/resources/products/espresso/americano.jpg"
+        "image": "/resources/products/espresso/americano.jpg",
+        "type": "Espresso",
+        "label":"with Vanilla Sweet Cream Cold Foam"
     },
     {
         "id": 2,
         "name": "Spanish Latte",
         "price": 120.00,
-        "image": "/resources/products/espresso/spanish.jpg"
+        "image": "/resources/products/espresso/spanish.jpg",
+        "type": "Espresso",
+        "label":"A harmonious duet of bitter and sweet"
     },
     {
         "id": 3,
         "name": "White Mocha",
         "price": 120.00,
-        "image": "/resources/products/espresso/white.jpg"
+        "image": "/resources/products/espresso/white.jpg",
+        "type": "Espresso",
+        "label":"Steamed white chocolate syrup espresso"
     },
     {
         "id": 4,
         "name": "Choco Lava",
         "price": 110.00,
-        "image": "/resources/products/espresso/choco.jpg"
+        "image": "/resources/products/noncoffee/choco.jpeg",
+        "type": "Non-Coffee",
+        "label":"Delicious Chocolate Latte with extra Lava"
     },
     {
         "id": 5,
         "name": "Strawberry Milk",
         "price": 130.00,
-        "image": "/resources/products/espresso/sberry.jpg"
+        "image": "/resources/products/noncoffee/sberry.PNG",
+        "type": "Non-Coffee",
+        "label":"100% Pure Strawberry Goodness"
+        
     },
     {
         "id": 6,
         "name": "Original Chocolate",
         "price": 130.00,
-        "image": "/resources/products/espresso/origchoco.jpg"
+        "image": "/resources/products/noncoffee/origchoco.jpg",
+        "type": "Non-Coffee",
+        "label":"Your go to chocolate drink made special"
     },
     {
         "id": 7,
         "name": "Matcha Latte",
         "price": 130.00,
-        "image": "/resources/products/espresso/match.jpg"
+        "image": "/resources/products/noncoffee/match.jpg",
+        "type": "Non-Coffee",
+        "label":"Pure Matcha goodness with milk"
     }
 ]

@@ -1,3 +1,63 @@
+let iconCart = document.querySelector('.icon-cart');
+let closeCart = document.querySelector('.close');
+let body = document.querySelector('body');
+let listorderHTML = document.querySelector('.shop-box');
+let listorder = [];
+
+//cartfunctions
+
+iconCart.addEventListener('click', () => {
+  body.classList.toggle('showcart');
+})
+
+closeCart.addEventListener('click', () => {
+  body.classList.toggle('showcart');
+})
+
+const addDataToHTML = () => {
+  listorderHTML.innerHTML = '';
+  if(listorder.length > 0){
+    listorder.forEach(product => {
+        let newProduct = document.createElement('div');
+        newProduct.classList.add('item');
+        newProduct.innerHTML = `
+        <div class="card">
+            <div class="card-image">
+              <button class="addtocart">Add to Cart</button>
+              <img src="${product.image}" alt="" />
+            </div>
+            <div class="card-body">
+              <span class="coffee-type">${product.type}</span>
+              <label class="cash">&#8369 ${product.price}</label><!--#8369-->
+              <h3>${product.name}</h3>
+              <label for="">${product.label}</label>
+            </div>
+          </div>`;
+          listorderHTML.appendChild(newProduct);
+    });
+  }
+}
+
+listorderHTML.addEventListener('click', (event) => {
+  let positionClick = event.target;
+  if(positionClick.classList.contains('addtocart')){
+    alert(1);
+  }
+})
+
+const initApp = () => {
+  //get data from json
+  fetch('products.json')
+  .then(response => response.json())
+  .then(data => {
+    listorder = data;
+    addDataToHTML();
+  })
+}
+initApp();
+
+
+
 document.addEventListener('scroll', () => {
     const header = document.querySelector('header');
 
@@ -48,41 +108,4 @@ document.getElementById('order-form').addEventListener('submit', function(event)
 });
 
 
-//cartfunctions
-
-let iconCart = document.querySelector('.icon-cart');
-let closeCart = document.querySelector('.close');
-let body = document.querySelector('body');
-let listorderHTML = document.querySelector('.list__order');
-let listorder = [];
-
-
-iconCart.addEventListener('click', () => {
-  body.classList.toggle('showcart');
-})
-
-closeCart.addEventListener('click', () => {
-  body.classList.toggle('showcart');
-})
-
-const initApp = () => {
-  //get data from json
-  fetch('products.json')
-  .then(response => response.json())
-  .then(data => {
-    listorder = data;
-    console.log(listorder);
-  })
-}
-
-const addDataToHTML = () => {
-  listorderHTML.innerHTML = '';
-  if(listorder.length > 0){
-    listorder.forEach(product => {
-      let new 
-    });
-  }
-} 
-
-initApp();
 
