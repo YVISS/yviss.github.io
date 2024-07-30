@@ -51,19 +51,99 @@ listorderHTML.addEventListener('click', (event) => {
   if(positionClick.classList.contains('addtocart')){
     let productElement = positionClick.closest('.item'); // Find the closest ancestor with the 'item' class
     let product_id = productElement.dataset.id;
-    alert(product_id); 
     addToCart(product_id);
   }
 }) 
 
 const addToCart= (product_id) => {
+  let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id); 
   if(carts.length <= 0){
     carts = [{
       product_id: product_id,
       quantity: 1
     }]
+  }else if(positionThisProductInCart < 0 ){
+    carts.push({
+      product_id: product_id,
+      quantity: 1
+    })
+  }else{
+    carts[positionThisProductInCart].quantity += 1;  
   }
-  console.log(carts);
+  addCartToHTML();
+  addToCartMemory();
+}
+
+const addToCartMemory = () => {
+  localStorage.setItem('cart', JSON.stringify(carts));
+}
+
+
+const addCartToHTML = () =>{
+  listeditemsHTML.innerHTML = '';
+  let totalQuantity = 0;
+  if(carts.length > 0){
+    carts.forEach(cart => {
+      totalQuantity = totalQuantity + cart.quantity;
+      let newCart = document.createElement('div');
+      newCart.classList.add('listed__orders');
+      newCart.dataset.id = cart.product_id;
+      let positionProduct = listorder.findIndex((value) => value.id == cart.product_id);
+      let info = listorder[positionProduct];
+      newCart.innerHTML = `
+           <div class="listed__image">
+              <img src="${info.image}" alt="">
+            </div>
+            <div class="listed__name">
+              ${info.name}
+            </div>
+            <div class="listed__price">
+              &#8369 ${info.price * cart.quantity}
+            </div>
+            <div class="listed__quantity">
+              <span class="minus">-</span>
+              <span>${cart.quantity}</span>
+              <span class="plus">+</span>
+            </div>
+        `;
+      listeditemsHTML.appendChild(newCart);
+    })
+  }
+  iconCartSpan.innerText = totalQuantity;
+}
+
+listeditemsHTML.addEventListener('click', (event) => {
+  let positionClick = event.target;
+  if (positionClick.classList.contains('minus') || positionClick.classList.contains('plus')) {
+    let product_id = positionClick.closest('.listed__orders').dataset.id; 
+    let type = 'minus';
+    if (positionClick.classList.contains('plus')) {
+      type = 'plus';
+    }
+    changeQuantity(product_id, type);
+  }
+});
+
+const changeQuantity = (product_id, type) => {
+  let postionItemInCart = carts.findIndex((value) => value.product_id == product_id);
+  if (postionItemInCart >= 0) {
+    switch (type) {
+      case 'plus':
+        carts[postionItemInCart].quantity = carts[postionItemInCart].quantity +  1;
+        break;
+    
+      default:
+        let valueChange = carts[postionItemInCart].quantity - 1;
+        if(valueChange > 0){
+          carts[postionItemInCart].quantity = valueChange;
+        }else{
+          carts.splice(postionItemInCart, 1);
+        }
+        break;
+    }
+  }
+  addToCartMemory();
+  addCartToHTML();
 }
 
 const initApp = () => {
@@ -73,9 +153,23 @@ const initApp = () => {
   .then(data => {
     listorder = data;
     addDataToHTML();
+
+    //get from memory
+
+    if(localStorage.getItem('cart')){
+      carts = JSON.parse(localStorage.getItem('cart'));
+      addCartToHTML();
+    }
   })
 }
 initApp();
+
+//close the website
+window.addEventListener('beforeunload', () => {
+  localStorage.removeItem('cart'); // Remove a specific item
+  // localStorage.clear(); // Uncomment to clear all items
+});
+
 
 
 
