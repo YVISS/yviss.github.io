@@ -2,7 +2,14 @@ let iconCart = document.querySelector('.icon-cart');
 let closeCart = document.querySelector('.close');
 let body = document.querySelector('body');
 let listorderHTML = document.querySelector('.shop-box');
+let listeditemsHTML = document.querySelector('.listeditems');
+let iconCartSpan = document.querySelector('.icon-cart span')
+
 let listorder = [];
+let carts = [];
+
+
+
 
 //cartfunctions
 
@@ -20,6 +27,7 @@ const addDataToHTML = () => {
     listorder.forEach(product => {
         let newProduct = document.createElement('div');
         newProduct.classList.add('item');
+        newProduct.dataset.id = product.id;
         newProduct.innerHTML = `
         <div class="card">
             <div class="card-image">
@@ -41,9 +49,22 @@ const addDataToHTML = () => {
 listorderHTML.addEventListener('click', (event) => {
   let positionClick = event.target;
   if(positionClick.classList.contains('addtocart')){
-    alert(1);
+    let productElement = positionClick.closest('.item'); // Find the closest ancestor with the 'item' class
+    let product_id = productElement.dataset.id;
+    alert(product_id); 
+    addToCart(product_id);
   }
-})
+}) 
+
+const addToCart= (product_id) => {
+  if(carts.length <= 0){
+    carts = [{
+      product_id: product_id,
+      quantity: 1
+    }]
+  }
+  console.log(carts);
+}
 
 const initApp = () => {
   //get data from json
