@@ -3,7 +3,8 @@ let closeCart = document.querySelector('.close');
 let body = document.querySelector('body');
 let listorderHTML = document.querySelector('.shop-box');
 let listeditemsHTML = document.querySelector('.listeditems');
-let iconCartSpan = document.querySelector('.icon-cart span')
+let iconCartSpan = document.querySelector('.icon-cart span');
+let totalPriceElement = document.getElementById('total-price');
 
 let listorder = [];
 let carts = [];
@@ -82,6 +83,7 @@ const addToCartMemory = () => {
 const addCartToHTML = () =>{
   listeditemsHTML.innerHTML = '';
   let totalQuantity = 0;
+  let totalPrice = 0; // Variable to store the total price
   if(carts.length > 0){
     carts.forEach(cart => {
       totalQuantity = totalQuantity + cart.quantity;
@@ -90,6 +92,7 @@ const addCartToHTML = () =>{
       newCart.dataset.id = cart.product_id;
       let positionProduct = listorder.findIndex((value) => value.id == cart.product_id);
       let info = listorder[positionProduct];
+      totalPrice += info.price * cart.quantity;
       newCart.innerHTML = `
            <div class="listed__image">
               <img src="${info.image}" alt="">
@@ -110,6 +113,7 @@ const addCartToHTML = () =>{
     })
   }
   iconCartSpan.innerText = totalQuantity;
+  totalPriceElement.innerText = totalPrice.toFixed(2);
 }
 
 listeditemsHTML.addEventListener('click', (event) => {
@@ -163,12 +167,6 @@ const initApp = () => {
   })
 }
 initApp();
-
-//close the website
-window.addEventListener('beforeunload', () => {
-  localStorage.removeItem('cart'); // Remove a specific item
-  // localStorage.clear(); // Uncomment to clear all items
-});
 
 
 

@@ -376,7 +376,7 @@ header nav ul li a:hover {
   position: fixed;
   inset: 0 -500px 0 auto;
   display: grid;
-  grid-template-rows: 70px 1fr 70px;
+  grid-template-rows: 70px 1fr 70px 70px;
   z-index: 999;
   transition: 0.5s ease-in-out;
 }
@@ -388,7 +388,7 @@ body.showcart .cartTab{
   inset: 0 0 0 auto;
 }
 
-.cartTab h1{
+.cartTab h1, h2{
   padding: 20px;
   font-weight: 300;
   margin: 0;
@@ -689,6 +689,10 @@ form .form-content input:valid ~ span::before {
   .content p {
     font-size: 18px;
   }
+
+  .listeditems{
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -820,5 +824,15 @@ form .form-content input:valid ~ span::before {
   }
   .content p {
     font-size: 13px;
+  }
+  .listeditems{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cartTab {
+    width: 100%;
+  }
+  .cartTab .listeditems .listed__orders{
+    grid-template-columns: 70px 150px 50px 100px;
+    gap: 10px;
   }
 }
